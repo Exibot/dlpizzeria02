@@ -3,19 +3,22 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock, faPizzaSlice, faUnlock } from "@fortawesome/free-solid-svg-icons";
+import {
+    faLock,
+    faPizzaSlice,
+    faUnlock,
+} from "@fortawesome/free-solid-svg-icons";
 
 const formatNumber = (number) => {
-  return new Intl.NumberFormat("es-CL", {
-      currency: "CLP",
-      style: "currency",
-  }).format(number);
+    return new Intl.NumberFormat("es-CL", {
+        currency: "CLP",
+        style: "currency",
+    }).format(number);
 };
-
 
 function NavigationBar() {
     const total = 25000;
-    let token = true;
+    let token = false;
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -56,7 +59,9 @@ function NavigationBar() {
                     )}
                 </Nav>
                 <Nav href="#cart" className="ms-auto">
-                    <Button variant="outline-info">{formatNumber(total)}</Button>
+                    <Button variant="outline-info">
+                        {formatNumber(total)}
+                    </Button>
                 </Nav>
             </Container>
         </Navbar>
